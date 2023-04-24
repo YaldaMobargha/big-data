@@ -13,16 +13,15 @@ public class SparkDriver{
          inputPath = args[0];
          outputPath = args[1];
 
-         SparkConf conf = new SparkConf().setAppName("Spark Exercise #30")
+         SparkConf conf = new SparkConf().setAppName("e30");
 
          JavaSparkContext obj = new JavaSparkContext(conf);
-
+        //read input data
          JavaRDD<String> infile = obj.textFile(inputPath);
-
+        //only keep the lines with "google" in them 
          JavaRDD<String> includegoogle = infile.filter(t -> t.toLowerCase().contains("google"));
 
          includegoogle.saveAsTextFile(outputPath);
-
          obj.close();
 
     }
