@@ -1,6 +1,7 @@
-package it.polito.bigdata.spark.exercise30;
+package it.polito.bigdata.spark.exercise35;
 
-import org.apache.spark.spi.java.*;
+import org.apache.spark.api.java.*;
+import java.util.List;
 import org.apache.spark.SparkConf;
 
 public class SparkDriver{
@@ -53,7 +54,7 @@ public class SparkDriver{
 
         JavaRDD<String> disdate = dates.distinct();
 
-        disdate.saveAsTextFiel(outputPath);
+        disdate.saveAsTextFile(outputPath);
         obj.close();
     }
 }

@@ -1,6 +1,9 @@
-package 34_linesWithMaxSensorValue;
+package it.polito.bigdata.spark.exercise34;
 
-public class e34 {
+import org.apache.spark.api.java.*;
+import org.apache.spark.SparkConf;
+
+public class SparkDriver {
     public static void main(String[] args){
 
         String inputpath;
@@ -40,7 +43,7 @@ public class e34 {
                 return false;
         });
 
-        linesWithMaxSensorValue.saveAsTextFiel(outputpath);
+        linesWithMaxSensorValue.saveAsTextFile(outputpath);
         obj.close();
     }
     

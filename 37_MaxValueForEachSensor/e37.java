@@ -38,7 +38,7 @@ public class SparkDriver{
                 return value2;
         });
 
-        MaxValue.saveAsTextFiel(outputpath);
+        MaxValue.saveAsTextFile(outputpath);
         obj.close();
     }
 }

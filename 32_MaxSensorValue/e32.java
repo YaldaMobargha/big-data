@@ -1,4 +1,4 @@
-package it.polito.bigdata.spark.exercise30;
+package it.polito.bigdata.spark.exercise32;
 
 import org.apache.spark.spi.java.*;
 import org.apache.spark.SparkConf;
@@ -33,7 +33,7 @@ public class SparkDriver{
                 return value2;
         });
 
-        system.out.println(MaxValue);
+        System.out.println(MaxValue);
         obj.close();
     }
 }
