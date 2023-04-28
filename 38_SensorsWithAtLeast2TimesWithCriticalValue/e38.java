@@ -31,11 +31,9 @@ public class SparkDriver{
         });
 
         JavaPairRDD<String, Double> sensorpair = morethan50.mapToPair(line ->{
-            Double sValue;
             String sID;
 
             String[] parts= line.split(",");
-            sValue = new Double(parts[2]);
             sID = parts[0];
 
             Tuple2<String, Double> pair = new Tuple2<String, Double>(sID, 1);
