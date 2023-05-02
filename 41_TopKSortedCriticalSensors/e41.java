@@ -35,7 +35,7 @@ public class SparkDriver{
             String sID;
             String[] parts = line.split(",");
             sID = parts[0];
-            Tuple2<String, String> pair = new Tuple2<String,Integer>(sID, 1); 
+            Tuple2<String, Integer> pair = new Tuple2<String,Integer>(sID, 1); 
             return pair; 
         });
 
