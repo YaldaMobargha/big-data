@@ -51,8 +51,21 @@ public class SparkDriver{
         });
 
         JavaPairRDD<String,Count> countfree = CriticalSituation.reduceByKey(line ->{
-            return new Tuple2<String, Count>(sID, new Count(value1, 1));
-        })
+            return new Tuple2<String, Count>(sID, new Sum());
+        });
+        
+		JavaPairRDD<String, Double> SPercentagePair = countfree.mapValues(new Percentage());
+
+        JavaPairRDD<String, Double> morethan80 =SPercentagePair.filter(pair ->{
+            Double Percent = pair._2()._2();
+
+            if ((double) Percent > 0.8) {
+                return true;
+            } else
+                return false;
+        });
+
+        
 
     }
 }
