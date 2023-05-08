@@ -20,7 +20,7 @@ class MapperBigData extends Mapper<
         Text value,
         Context context) throws IOException, InterruptedException{
 
-            String[] words = value.toString().split("\\s");
+            String[] words = value.toString().split("\\s+");
  
             for(String word : words){
                 String cleanedWord = word.toLowerCase();
